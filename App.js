@@ -1,43 +1,56 @@
 import { useDeviceOrientation } from "@react-native-community/hooks";
-import {
-  Dimensions,
-  StyleSheet,
-  StatusBar,
-  Text,
-  Button,
-  Platform,
-  SafeAreaView,
-  View,
-  LogBox,
-} from "react-native";
+import { View } from "react-native";
 
 export default function App() {
-  const orientation = useDeviceOrientation();
-  if (orientation === "landscape") {
-    StatusBar.setHidden(true);
-  } else {
-    StatusBar.setHidden(false);
-  }
+  // Next video is on flexBasis
+
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
+    <View
+      style={{
+        backgroundColor: "#fff",
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center", // align on primary axis
+        alignItems: "center", // align on secondary axis
+        alignContent: "center",
+        flexWrap: "wrap",
+      }}
+    >
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: "100%",
-          height: orientation === "landscape" ? "100%" : "30%",
+          width: 100,
+          height: 100,
         }}
-      ></View>
-    </SafeAreaView>
+      />
+      <View
+        style={{
+          backgroundColor: "gold",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "tomato",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "grey",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "greenyellow",
+          width: 100,
+          height: 100,
+        }}
+      />
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    // paddingTop: Platform.OS === "android" ? 40 : 0,
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-});
