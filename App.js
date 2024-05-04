@@ -1,56 +1,40 @@
 import { useDeviceOrientation } from "@react-native-community/hooks";
-import { View } from "react-native";
+import {
+  Button,
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 export default function App() {
-  // Next video is on flexBasis
-
   return (
-    <View
-      style={{
-        backgroundColor: "#fff",
-        flex: 1,
-        flexDirection: "row",
-        justifyContent: "center", // align on primary axis
-        alignItems: "center", // align on secondary axis
-        alignContent: "center",
-        flexWrap: "wrap",
-      }}
+    <ImageBackground
+      source={require("./assets/background.jpg")}
+      resizeMode="cover"
+      style={styles.image}
     >
-      <View
-        style={{
-          backgroundColor: "dodgerblue",
-          width: 100,
-          height: 100,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "gold",
-          width: 100,
-          height: 100,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "tomato",
-          width: 100,
-          height: 100,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "grey",
-          width: 100,
-          height: 100,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "greenyellow",
-          width: 100,
-          height: 100,
-        }}
-      />
-    </View>
+      <Image source={require("./assets/logo-red.png")} style={styles.logo} />
+      <Text>Sell What You Don't Need</Text>
+      <View>
+        <Button title="Login" style={styles.bar} />
+      </View>
+      <View style={styles.bar}></View>
+    </ImageBackground>
   );
 }
+const styles = StyleSheet.create({
+  bar: {
+    width: 100,
+    backgroundColor: "#fc5c65",
+  },
+  image: {
+    flex: 1,
+    alignItems: "center",
+  },
+  logo: {
+    width: 100,
+    height: 100,
+  },
+});
