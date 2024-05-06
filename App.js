@@ -1,4 +1,3 @@
-import { useDeviceOrientation } from "@react-native-community/hooks";
 import {
   Button,
   Image,
