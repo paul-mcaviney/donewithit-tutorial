@@ -2,6 +2,11 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import { Text, View } from "react-native";
 
+// import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+// TODO: Get this icon import working properly
+
+import AppText from "./app/components/AppText";
+
 export default function App() {
   return (
     <View
@@ -11,17 +16,7 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <View
-        style={{
-          backgroundColor: "dodgerblue",
-          width: 100,
-          height: 100,
-          shadowColor: "grey",
-          shadowOffset: { width: 10, height: 10 },
-          shadowOpacity: 1,
-          elevation: 20,
-        }}
-      ></View>
+      <AppText>This is a text</AppText>
     </View>
   );
 }
