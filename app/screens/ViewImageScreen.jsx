@@ -8,7 +8,7 @@ import {
   View,
 } from "react-native";
 
-export default function App() {
+export default function ViewImageScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
