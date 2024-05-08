@@ -8,6 +8,8 @@ import {
   View,
 } from "react-native";
 
+import colors from "../config/colors";
+
 export default function ViewImageScreen() {
   return (
     <SafeAreaView style={styles.container}>
@@ -35,12 +37,12 @@ const styles = StyleSheet.create({
     paddingRight: 20,
   },
   closeIcon: {
-    backgroundColor: "#fc5c65",
+    backgroundColor: colors.primary,
     width: 50,
     height: 50,
   },
   container: {
-    backgroundColor: "black",
+    backgroundColor: colors.black,
     flex: 1,
     width: "100%",
     alignItems: "center",
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
     // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   deleteIcon: {
-    backgroundColor: "#fc5c65",
+    backgroundColor: colors.secondary,
     width: 50,
     height: 50,
   },
