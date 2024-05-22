@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 import colors from "../config/colors";
+import AppButton from "../components/AppButton";
 
 export default function WelcomeScreen() {
   return (
@@ -20,8 +21,16 @@ export default function WelcomeScreen() {
         <Image source={require("../assets/logo-red.png")} style={styles.logo} />
         <Text>Sell What You Don't Need</Text>
       </View>
-      <View style={styles.loginButton}></View>
-      <View style={styles.registerButton}></View>
+      <AppButton
+        title="login"
+        bgColor={colors.primary}
+        onPress={() => console.log("Login")}
+      />
+      <AppButton
+        title="Register"
+        bgColor={colors.secondary}
+        onPress={() => console.log("Login")}
+      />
     </ImageBackground>
   );
 }
