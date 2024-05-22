@@ -3,27 +3,36 @@ import AppText from "./AppText";
 
 import colors from "../config/colors";
 
-export default function AppButton({ title, bgColor, onPress }) {
+export default function AppButton({ title, color = "primary", onPress }) {
   return (
-    <Pressable
-      style={{ ...styles.button, backgroundColor: bgColor }}
-      onPress={onPress}
-      android_ripple={{ color: "white" }}
-    >
-      <AppText style={styles.text} color={colors.white} size={16} weight={700}>
-        {title}
-      </AppText>
-    </Pressable>
+    <View style={styles.buttonContainer}>
+      <Pressable
+        style={{ ...styles.button, backgroundColor: colors[color] }}
+        onPress={onPress}
+        android_ripple={{ color: colors.white }}
+      >
+        <AppText
+          style={styles.text}
+          color={colors.white}
+          size={16}
+          weight={700}
+        >
+          {title}
+        </AppText>
+      </Pressable>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   button: {
     width: "100%",
-    height: 50,
-    overflow: "hidden",
-    borderRadius: 25,
     justifyContent: "center",
     alignItems: "center",
+    padding: 15,
+  },
+  buttonContainer: {
+    borderRadius: 25,
+    overflow: "hidden",
   },
 });
