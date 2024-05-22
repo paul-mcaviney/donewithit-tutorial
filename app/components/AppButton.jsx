@@ -1,31 +1,29 @@
-import { Button, Pressable, View, StyleSheet } from "react-native";
+import { Button, Pressable, View, StyleSheet, Platform } from "react-native";
 import AppText from "./AppText";
 
+import colors from "../config/colors";
+
 export default function AppButton({ title, bgColor, onPress }) {
-  const buttonTitle = title.toString();
   return (
-    <Pressable style={styles.container} styles={{ backgroundColor: bgColor }}>
-      {/* TODO: Style this properly without using the button part of it (just a pressable and text) */}
-      {/* <Button
-        title={buttonTitle}
-        onPress={onPress}
-        color={bgColor}
-        style={styles.button}
-      /> */}
-      {/* <AppText>{title}</AppText> */}
+    <Pressable
+      style={{ ...styles.button, backgroundColor: bgColor }}
+      onPress={onPress}
+      android_ripple={{ color: "white" }}
+    >
+      <AppText style={styles.text} color={colors.white}>
+        {title}
+      </AppText>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  button: {
     width: "100%",
-    height: 70,
+    height: 50,
     overflow: "hidden",
     borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  // button: {
-  //   borderRadius: 50,
-  //   overflow: "hidden",
-  // },
 });

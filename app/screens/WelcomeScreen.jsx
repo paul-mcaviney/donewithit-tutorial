@@ -21,16 +21,18 @@ export default function WelcomeScreen() {
         <Image source={require("../assets/logo-red.png")} style={styles.logo} />
         <Text>Sell What You Don't Need</Text>
       </View>
-      <AppButton
-        title="login"
-        bgColor={colors.primary}
-        onPress={() => console.log("Login")}
-      />
-      <AppButton
-        title="Register"
-        bgColor={colors.secondary}
-        onPress={() => console.log("Login")}
-      />
+      <View style={styles.buttonContainer}>
+        <AppButton
+          title="Login"
+          bgColor={colors.primary}
+          onPress={() => console.log("Login")}
+        />
+        <AppButton
+          title="Register"
+          bgColor={colors.secondary}
+          onPress={() => console.log("Register")}
+        />
+      </View>
     </ImageBackground>
   );
 }
@@ -40,9 +42,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
   },
-  loginButton: {
-    height: 70,
-    backgroundColor: colors.primary,
+  buttonContainer: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 50,
+    rowGap: 20,
   },
   logo: {
     width: 100,
@@ -52,9 +56,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     top: 100,
-  },
-  registerButton: {
-    height: 70,
-    backgroundColor: colors.secondary,
   },
 });
