@@ -9,6 +9,7 @@ import {
 
 import colors from "../config/colors";
 import AppButton from "../components/AppButton";
+import AppText from "../components/AppText";
 
 export default function WelcomeScreen() {
   return (
@@ -16,19 +17,22 @@ export default function WelcomeScreen() {
       source={require("../assets/background.jpg")}
       resizeMode="cover"
       style={styles.background}
+      blurRadius={4}
     >
       <View style={styles.logoContainer}>
         <Image source={require("../assets/logo-red.png")} style={styles.logo} />
-        <Text>Sell What You Don't Need</Text>
+        <AppText size={18} weight={700}>
+          Sell What You Don't Need
+        </AppText>
       </View>
       <View style={styles.buttonContainer}>
         <AppButton
-          title="Login"
+          title="LOGIN"
           bgColor={colors.primary}
           onPress={() => console.log("Login")}
         />
         <AppButton
-          title="Register"
+          title="REGISTER"
           bgColor={colors.secondary}
           onPress={() => console.log("Register")}
         />
@@ -45,7 +49,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     paddingLeft: 20,
     paddingRight: 20,
-    paddingBottom: 50,
+    paddingBottom: 40,
     rowGap: 20,
   },
   logo: {
@@ -56,5 +60,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     top: 100,
+    rowGap: 20,
   },
 });

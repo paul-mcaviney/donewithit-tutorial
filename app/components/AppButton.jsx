@@ -10,7 +10,7 @@ export default function AppButton({ title, bgColor, onPress }) {
       onPress={onPress}
       android_ripple={{ color: "white" }}
     >
-      <AppText style={styles.text} color={colors.white}>
+      <AppText style={styles.text} color={colors.white} size={16} weight={700}>
         {title}
       </AppText>
     </Pressable>
