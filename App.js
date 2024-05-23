@@ -7,7 +7,14 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AppText from "./app/components/AppText";
 import AppButton from "./app/components/AppButton";
 import colors from "./app/config/colors";
+import Card from "./app/components/Card";
 
 export default function App() {
-  return <WelcomeScreen />;
+  return (
+    <Card
+      title="Red Jacket For Sale!"
+      subTitle={"$100"}
+      imageUrl={require("appassetsjacket.jpg")}
+    />
+  );
 }
