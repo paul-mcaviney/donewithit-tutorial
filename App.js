@@ -11,10 +11,13 @@ import Card from "./app/components/Card";
 
 export default function App() {
   return (
-    <Card
-      title="Red Jacket For Sale!"
-      subTitle={"$100"}
-      imageUrl={require("appassetsjacket.jpg")}
-    />
+    <View style={{ backgroundColor: "#f8f4f4", padding: 20, paddingTop: 100 }}>
+      <Card
+        title="Red Jacket For Sale!"
+        subTitle={"$100"}
+        image={require("./app/assets/jacket.jpg")}
+        // image="./app/assets/jacket.jpg"
+      />
+    </View>
   );
 }
