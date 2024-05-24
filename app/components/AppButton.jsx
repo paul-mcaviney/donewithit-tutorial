@@ -35,4 +35,9 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     overflow: "hidden",
   },
+  text: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: colors.white,
+  },
 });
