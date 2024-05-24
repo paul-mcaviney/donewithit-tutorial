@@ -1,12 +1,6 @@
-import {
-  Image,
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, SafeAreaView, StatusBar, StyleSheet, View } from "react-native";
+
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 import colors from "../config/colors";
 
@@ -15,8 +9,18 @@ export default function ViewImageScreen() {
     <SafeAreaView style={styles.container}>
       <StatusBar />
       <View style={styles.buttonContainer}>
-        <View style={styles.closeIcon} />
-        <View style={[styles.deleteIcon, { backgroundColor: "#4ECDC4" }]} />
+        <MaterialCommunityIcons
+          name="close"
+          size={32}
+          color="white"
+          style={styles.closeIcon}
+        />
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          size={32}
+          color="white"
+          style={styles.deleteIcon}
+        />
       </View>
       <Image
         source={require("../assets/chair.jpg")}
@@ -37,7 +41,6 @@ const styles = StyleSheet.create({
     paddingRight: 20,
   },
   closeIcon: {
-    backgroundColor: colors.primary,
     width: 50,
     height: 50,
   },
@@ -50,7 +53,6 @@ const styles = StyleSheet.create({
     // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   deleteIcon: {
-    backgroundColor: colors.secondary,
     width: 50,
     height: 50,
   },
