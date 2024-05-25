@@ -1,6 +1,7 @@
 import { Image, StyleSheet, View } from "react-native";
 
 import AppText from "../components/AppText";
+import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 
 export default function ListingDetailsScreen({ imageUri, title, subTitle }) {
@@ -11,38 +12,21 @@ export default function ListingDetailsScreen({ imageUri, title, subTitle }) {
         <AppText style={styles.title}>{title}</AppText>
         <AppText style={styles.subTitle}>{subTitle}</AppText>
       </View>
-      <View style={styles.authorContainer}>
-        <Image
-          source={require("../assets/mosh.jpg")}
-          style={styles.authorImage}
+      <View style={styles.userContainer}>
+        <ListItem
+          imageUri={require("../assets/mosh.jpg")}
+          title="Mosh Hamedani"
+          subTitle="5 Listings"
         />
-        <View>
-          <AppText style={styles.authorName}>Mosh Hamedani</AppText>
-          <AppText>5 Listings</AppText>
-        </View>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  authorContainer: {
-    width: "100%",
-    flexDirection: "row",
-    columnGap: 15,
-    padding: 20,
-  },
-  authorImage: {
-    width: 75,
-    height: 75,
-    borderRadius: 50,
-  },
-  authorName: {
-    fontWeight: "bold",
-  },
   image: {
     width: "100%",
-    height: 250,
+    height: 300,
   },
   subTitle: {
     fontSize: 16,
@@ -55,6 +39,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: "500",
+  },
+  userContainer: {
+    padding: 20,
   },
 });
