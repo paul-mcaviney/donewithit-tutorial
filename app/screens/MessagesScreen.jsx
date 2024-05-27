@@ -1,6 +1,8 @@
-import { StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList, View } from "react-native";
 
 import ListItem from "../components/ListItem";
+import Screen from "../components/AppScreen";
+import ListItemSeparator from "../components/ListItemSeparator";
 
 export default function MessagesScreen() {
   const messages = [
@@ -18,24 +20,22 @@ export default function MessagesScreen() {
     },
   ];
   return (
-    <FlatList
-      data={messages}
-      keyExtractor={(message) => message.id.toString()}
-      renderItem={({ item }) => (
-        <ListItem
-          title={item.title}
-          subTitle={item.description}
-          imageUri={item.image}
-        />
-      )}
-    />
+    <Screen>
+      <FlatList
+        data={messages}
+        keyExtractor={(message) => message.id.toString()}
+        renderItem={({ item }) => (
+          <ListItem
+            title={item.title}
+            subTitle={item.description}
+            imageUri={item.image}
+            onPress={() => console.log(`Message item ${item.title} pressed`)}
+          />
+        )}
+        ItemSeparatorComponent={<ListItemSeparator />}
+      />
+    </Screen>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
