@@ -10,7 +10,9 @@ import colors from "./app/config/colors";
 import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
+import AccountScreen from "./app/screens/AccountScreen";
+import AppIcon from "./app/components/AppIcon";
 
 export default function App() {
-  return <MessagesScreen />;
+  return <AccountScreen />;
 }
