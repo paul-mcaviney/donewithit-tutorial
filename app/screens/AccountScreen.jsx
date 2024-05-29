@@ -15,7 +15,6 @@ export default function AccountScreen() {
         subTitle="programmingwithmosh@gmail.com"
         style={[styles.listItem, { marginBottom: 20 }]}
       />
-      <AppIcon iconName="logout" color={"#ffe66d"} />
       <ListItem />
     </AppScreen>
   );
