@@ -6,7 +6,7 @@ import colors from "../config/colors";
 
 export default function ListingDetailsScreen({ imageUri, title, subTitle }) {
   return (
-    <View>
+    <View style={styles.container}>
       <Image source={imageUri} style={styles.image} />
       <View style={styles.textContainer}>
         <AppText style={styles.title}>{title}</AppText>
@@ -43,5 +43,6 @@ const styles = StyleSheet.create({
   },
   userContainer: {
     padding: 20,
+    height: 100,
   },
 });
