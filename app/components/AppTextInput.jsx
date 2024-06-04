@@ -4,13 +4,16 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import colors from "../config/colors";
 
 export default function AppTextInput({ icon, ...otherProps }) {
-  const test = { ...otherProps };
-  console.log(test);
-  // TODO: figure out why the spread operator isn't working properly
   return (
     <View style={styles.container}>
-      {icon && <MaterialCommunityIcons name={icon} size={20} />}
-      <TextInput style={styles.TextInput} {...otherProps} />
+      {icon && (
+        <MaterialCommunityIcons
+          name={icon}
+          size={20}
+          color={colors.mediumGrey}
+        />
+      )}
+      <TextInput style={styles.textInput} {...otherProps} />
     </View>
   );
 }
@@ -26,7 +29,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     columnGap: 10,
   },
-  TextInput: {
+  textInput: {
+    color: colors.darkGrey,
     fontSize: 16,
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
   },

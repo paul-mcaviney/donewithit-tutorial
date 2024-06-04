@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <AppScreen>
-      <AppTextInput placeHolder="Username" />
+      <AppTextInput icon="email" placeholder="Username" />
     </AppScreen>
   );
 }
