@@ -1,22 +1,28 @@
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import { Button, Switch, Text, TextInput, View } from "react-native";
-
-import Card from "./app/components/Card";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-import MessagesScreen from "./app/screens/MessagesScreen";
-import AccountScreen from "./app/screens/AccountScreen";
-import AppScreen from "./app/components/AppScreen";
-import ListingsScreen from "./app/screens/ListingsScreen";
 import { useState } from "react";
+
+import AppScreen from "./app/components/AppScreen";
 import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
+
+const categories = [
+  { label: "furniture", value: 1 },
+  { label: "Clothes", value: 2 },
+  { label: "Random", value: 3 },
+];
 
 export default function App() {
-  const [isNew, setIsNew] = useState(false);
+  const [category, setCategory] = useState();
 
   return (
     <AppScreen>
-      <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
+      <AppPicker
+        items={categories}
+        icon="apps"
+        onSelectItem={(item) => setCategory(item)}
+        placeholder="Category"
+        selectedCategory={category}
+      />
+      <AppTextInput icon="email" placeholder="Email" />
     </AppScreen>
   );
 }
