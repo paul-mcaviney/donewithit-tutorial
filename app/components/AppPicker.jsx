@@ -34,7 +34,7 @@ export default function AppPicker({
             />
           )}
           <AppText style={styles.text}>
-            {selectedItem ? selectedItem.label : placeholder}
+            {selectedItem ? selectedItem : placeholder}
           </AppText>
           <MaterialCommunityIcons
             name={"chevron-down"}

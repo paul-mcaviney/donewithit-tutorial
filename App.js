@@ -5,7 +5,7 @@ import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 
 const categories = [
-  { label: "furniture", value: 1 },
+  { label: "Furniture", value: 1 },
   { label: "Clothes", value: 2 },
   { label: "Random", value: 3 },
 ];
@@ -18,9 +18,11 @@ export default function App() {
       <AppPicker
         items={categories}
         icon="apps"
-        onSelectItem={(item) => setCategory(item)}
+        onSelectItem={(item) => {
+          setCategory(item);
+        }}
         placeholder="Category"
-        selectedCategory={category}
+        selectedItem={category}
       />
       <AppTextInput icon="email" placeholder="Email" />
     </AppScreen>
