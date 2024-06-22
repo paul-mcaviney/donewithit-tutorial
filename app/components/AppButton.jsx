@@ -3,9 +3,14 @@ import AppText from "./AppText";
 
 import colors from "../config/colors";
 
-export default function AppButton({ title, color = "primary", onPress }) {
+export default function AppButton({
+  title,
+  color = "primary",
+  onPress,
+  style,
+}) {
   return (
-    <View style={styles.buttonContainer}>
+    <View style={[styles.buttonContainer, style]}>
       <Pressable
         style={{ ...styles.button, backgroundColor: colors[color] }}
         onPress={onPress}
