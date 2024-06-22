@@ -13,6 +13,7 @@
     "expo": "^51.0.14",
     "expo-image": "^1.12.12",
     "expo-status-bar": "~1.12.1",
+    "formik": "^2.1.4",
     "react": "18.2.0",
     "react-native": "^0.74.2",
     "react-native-gesture-handler": "~2.16.1",
